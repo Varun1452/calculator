@@ -1,36 +1,102 @@
 import React from "react";
 import {Button} from 'react-bootstrap';
+import {FaBackspace} from 'react-icons/fa'
 
 function calculator() {
   return (
     <div className="Calculator">
       <div className="Calculator-wrapper">
-        <div className="Calculator-Heading">
-          <h3 className="disable">Calculator in react</h3>
+        <div className="Calculator-Heading Aligned">
+          <h3 className="Disable">Calculator in react</h3>
         </div>
-        <div className="Calculator-screen">
+        <div className="Calculator-screen Aligned">
           <div className="Calculator-output">
             <span>
 
             </span>
           </div>
-          <div className="Calculator-Backspace">
-            <button className="Backspace-Btn">
-              <i className=""> </i>
-            </button>
+        </div>
+          <div className="Calculator-Input Aligned">
             <span>
 
             </span>
           </div>
-          <div className="Calculator_Button"> 
+          <div className="Calculator-Button"> 
                 <Button type='button' className='Top-Btn' value='AC'>
                   AC
                 </Button>
-                <button type="button" className='Top-Btn' value=''>
-                  <sup>+</sup>/<sub>-</sub>
-                </button>
+                <Button type="button" className='Top-Btn' value='+/-'>
+                +/-
+                </Button>
+                
+                <Button type="button" className='Top-Btn' value='%'>
+                %
+                </Button>
+               
+                <Button type="button" className='Special-Btn' value='backspace'>
+                <FaBackspace/>
+                </Button>
+
+                <Button type='button' className='Normal-Btn' value='7'>
+                  7
+                </Button>
+                <Button type="button" className='Normal-Btn' value='8'>
+                  8
+                </Button>
+
+                <Button type="button" className='Normal-Btn' value='9'>
+                  9
+                </Button>
+                
+                <Button type="button" className='Special-Btn' value='X'>
+                X
+                </Button>
+               
+                <Button type="button" className='Normal-Btn' value='4'>
+                4
+                </Button>
+
+                <Button type='button' className='Normal-Btn' value='5'>
+                  5
+                </Button>
+                <Button type="button" className='Normal-Btn' value='6'>
+                  6
+                </Button>
+                  
+                <Button type="button" className='Special-Btn' value='÷'>
+                  ÷
+                </Button>
+               
+                <Button type="button" className='Normal-Btn' value='1'>
+                  1
+                </Button>
+
+                <Button type='button' className='Normal-Btn' value='2'>
+                  2
+                </Button>
+                <Button type="button" className='Normal-Btn' value='3'>
+                  3
+                </Button>
+                
+                <Button type="button" className='Special-Btn' value='-'>
+                -
+                </Button>
+               
+                <Button type="button" className='Normal-Btn' value='.'>
+               .
+                </Button>
+
+                <Button type="button" className='Normal-Btn' value='0'>
+               0
+                </Button>
+
+                <Button type='button' className='Special-Btn' value='+'>
+                  +
+                </Button>
+                <Button type="button" className='Special-Btn' value='='>
+                =
+                </Button>
           </div>
-        </div>
       </div>
     </div>
   );
