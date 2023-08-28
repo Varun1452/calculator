@@ -157,3 +157,10 @@ Button{
   color: var(--default-text-color);
   cursor: pointer;
 }
+
+.Calculator-Wrapper{
+
+  display: grid;
+  height: 100%;
+  grid-auto-rows: 10% 28% 11% 51%;
+}

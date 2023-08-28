@@ -5,7 +5,7 @@ import {FaBackspace} from 'react-icons/fa'
 function calculator() {
   return (
     <div className="Calculator">
-      <div className="Calculator-wrapper">
+      <div className="Calculator-Wrapper">
         <div className="Calculator-Heading Aligned">
           <h3 className="Disable">Calculator in react</h3>
         </div>
