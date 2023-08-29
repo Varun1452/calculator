@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button} from 'react-bootstrap';
 import {FaBackspace} from 'react-icons/fa'
 
-function calculator() {
+function Calculator() {
+  const [input, setInput]= useState ("");
+  const handleInput = (e) => {
+    const value = e.target.value;
+
+    setInput((input)=> input + value );
+  }
   return (
     <div className="Calculator">
       <div className="Calculator-Wrapper">
@@ -12,13 +18,13 @@ function calculator() {
         <div className="Calculator-screen Aligned">
           <div className="Calculator-output">
             <span>
-
+            
             </span>
           </div>
         </div>
           <div className="Calculator-Input Aligned">
             <span>
-
+            {input?  input : "0"}
             </span>
           </div>
           <div className="Calculator-Button"> 
@@ -37,14 +43,14 @@ function calculator() {
                 <FaBackspace/>
                 </Button>
 
-                <Button type='button' className='Normal-Btn' value='7'>
+                <Button type='button' className='Normal-Btn' value='7' onClick={handleInput}>
                   7
                 </Button>
-                <Button type="button" className='Normal-Btn' value='8'>
+                <Button type="button" className='Normal-Btn' value='8' onClick={handleInput}>
                   8
                 </Button>
 
-                <Button type="button" className='Normal-Btn' value='9'>
+                <Button type="button" className='Normal-Btn' value='9' onClick={handleInput}>
                   9
                 </Button>
                 
@@ -52,14 +58,14 @@ function calculator() {
                 X
                 </Button>
                
-                <Button type="button" className='Normal-Btn' value='4'>
+                <Button type="button" className='Normal-Btn' value='4' onClick={handleInput}>
                 4
                 </Button>
 
-                <Button type='button' className='Normal-Btn' value='5'>
+                <Button type='button' className='Normal-Btn' value='5' onClick={handleInput}>
                   5
                 </Button>
-                <Button type="button" className='Normal-Btn' value='6'>
+                <Button type="button" className='Normal-Btn' value='6' onClick={handleInput}>
                   6
                 </Button>
                   
@@ -67,14 +73,14 @@ function calculator() {
                   ÷
                 </Button>
                
-                <Button type="button" className='Normal-Btn' value='1'>
+                <Button type="button" className='Normal-Btn' value='1' onClick={handleInput}>
                   1
                 </Button>
 
-                <Button type='button' className='Normal-Btn' value='2'>
+                <Button type='button' className='Normal-Btn' value='2' onClick={handleInput}>
                   2
                 </Button>
-                <Button type="button" className='Normal-Btn' value='3'>
+                <Button type="button" className='Normal-Btn' value='3' onClick={handleInput}>
                   3
                 </Button>
                 
@@ -86,7 +92,7 @@ function calculator() {
                .
                 </Button>
 
-                <Button type="button" className='Normal-Btn' value='0'>
+                <Button type="button" className='Normal-Btn' value='0' onClick={handleInput}>
                0
                 </Button>
 
@@ -101,4 +107,4 @@ function calculator() {
     </div>
   );
 }
-export default calculator;
+export default Calculator;

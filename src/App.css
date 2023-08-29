@@ -159,8 +159,8 @@ Button{
 }
 
 .Calculator-Wrapper{
-
   display: grid;
   height: 100%;
   grid-auto-rows: 10% 28% 11% 51%;
 }
+
