@@ -23,15 +23,25 @@ function Calculator() {
       setInput("");
       setOutput(0)
     }
-    else if (value == "pm")
+    else if (value == "pm") {
       if (input) {
         // eslint-disable-next-line no-eval
         let Check = eval(input);
         setInput(Check !== 0 ? (Check > 0 ? `-${Check}` : `${Math.abs(Check)}`) : "");
       }
+    }
+    else if (["+", "-", "/", "*",].includes(value)) {
+      if (input) {
+        const lastChar = input.slice(-1);
+        if (["+", "-", "/", "*",].includes(lastChar)) {
+          setInput(input.slice(0, -1) + value)
+        } else {
+          setInput(input + value)
 
+        }
+      }
+    }
   }
-
 
   const handleBackspace = () => {
     if (input.length > 0) {
@@ -66,7 +76,7 @@ function Calculator() {
             +/-
           </Button>
 
-          <Button type="button" className='Top-Btn' value='%'>
+          <Button type="button" className='Top-Btn' value='%' onClick={handleArithematicOperator}>
             %
           </Button>
 
@@ -85,7 +95,7 @@ function Calculator() {
             9
           </Button>
 
-          <Button type="button" className='Special-Btn' value='X'>
+          <Button type="button" className='Special-Btn' value='*' onClick={handleArithematicOperator}>
             X
           </Button>
 
@@ -100,7 +110,7 @@ function Calculator() {
             6
           </Button>
 
-          <Button type="button" className='Special-Btn' value='÷'>
+          <Button type="button" className='Special-Btn' value='/' onClick={handleArithematicOperator}>
             ÷
           </Button>
 
@@ -115,11 +125,11 @@ function Calculator() {
             3
           </Button>
 
-          <Button type="button" className='Special-Btn' value='-'>
+          <Button type="button" className='Special-Btn' value='-' onClick={handleArithematicOperator}>
             -
           </Button>
 
-          <Button type="button" className='Normal-Btn' value='.'>
+          <Button type="button" className='Normal-Btn' value='.' onClick={handleArithematicOperator}>
             .
           </Button>
 
@@ -127,7 +137,7 @@ function Calculator() {
             0
           </Button>
 
-          <Button type='button' className='Special-Btn' value='+'>
+          <Button type='button' className='Special-Btn' value='+' onClick={handleArithematicOperator}>
             +
           </Button>
           <Button type="button" className='Special-Btn' value='='>
