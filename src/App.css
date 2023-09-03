@@ -133,7 +133,7 @@ margin: auto;
   text-transform: uppercase;
   background-color: var(--black--first);
   border: 3px solid var(--main-black);
-  border-radius: 1rem;
+  border-radius: 2rem;
 }
 
 .Calculator-Button > Button:hover{
