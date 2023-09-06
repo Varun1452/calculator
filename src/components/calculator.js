@@ -70,7 +70,7 @@ function Calculator() {
         </div>
         <div className="Calculator-Button">
           <Button type='button' className='Top-Btn' value='AC' onClick={handleArithematicOperator}>
-            A
+            AC
           </Button>
           <Button type="button" className='Top-Btn' value='pm' onClick={handleArithematicOperator} >
             +/-
