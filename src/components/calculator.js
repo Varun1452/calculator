@@ -17,7 +17,7 @@ function Calculator() {
     if (value == "=") {
       if (input) {
         setOutput(eval(input));
-        setInput("");
+        setInput("input");
       }
     } else if (value == "AC") {
       setInput("");
@@ -59,13 +59,13 @@ function Calculator() {
         <div className="Calculator-screen Aligned">
           <div className="Calculator-output">
             <span>
-
+            {input ? input : "0"}
             </span>
           </div>
         </div>
         <div className="Calculator-Input Aligned">
           <span>
-            {input ? input : "0"}
+          {output ? output : "0"}
           </span>
         </div>
         <div className="Calculator-Button">
@@ -140,7 +140,7 @@ function Calculator() {
           <Button type='button' className='Special-Btn' value='+' onClick={handleArithematicOperator}>
             +
           </Button>
-          <Button type="button" className='Special-Btn' value='='>
+          <Button type="button" className='Special-Btn' value='=' onClick={handleArithematicOperator}>
             =
           </Button>
         </div>
