@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-eval */
+/* eslint-disable no-useless-escape */
 import React, { useState } from "react";
 import { Button } from 'react-bootstrap';
 import { FaBackspace } from 'react-icons/fa'
@@ -17,7 +20,7 @@ function Calculator() {
     if (value == "=") {
       if (input) {
         setOutput(eval(input));
-        setInput("input");
+        // setInput("");
       }
     } else if (value == "AC") {
       setInput("");
@@ -43,6 +46,23 @@ function Calculator() {
     }
   }
 
+  const handledot = (e) => {
+    const value = e.target.value;
+    const lastchar = input.slice(-1)
+    if (value === ".") {
+      if (["+", "-", "*", "/"].includes(lastchar)) {
+        return;
+      }
+      const currentNumber = input.split(/[\+\-\*\/]/).pop();
+      if (currentNumber.includes(".")) {
+        return;
+      }
+      setInput((input) => input + value);
+
+    }
+  }
+
+
   const handleBackspace = () => {
     if (input.length > 0) {
       setInput((input) => input.slice(0, -1));
@@ -59,13 +79,13 @@ function Calculator() {
         <div className="Calculator-screen Aligned">
           <div className="Calculator-output">
             <span>
-            {input ? input : "0"}
+              {input ? input : "0"}
             </span>
           </div>
         </div>
         <div className="Calculator-Input Aligned">
           <span>
-          {output ? output : "0"}
+            {output ? output : "0"}
           </span>
         </div>
         <div className="Calculator-Button">
@@ -129,7 +149,7 @@ function Calculator() {
             -
           </Button>
 
-          <Button type="button" className='Normal-Btn' value='.' onClick={handleArithematicOperator}>
+          <Button type="button" className='Normal-Btn' value='.' onClick={handledot} >
             .
           </Button>
 
